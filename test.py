@@ -10,7 +10,8 @@ def func(q):
     oppo_index_list = []
     index_skip = -1
     n = 0
-    cost_1 = cost_2 = 0
+    cost_1 = 0 
+    cost_2 = 0
 
     print 1
     while(flag != -1):
@@ -29,8 +30,7 @@ def func(q):
     for i,j in enumerate(index_list):
         cost_1 += j-i
     for i,j in enumerate(oppo_index_list):
-        cost_2 = j-1
-
+        cost_2 += j-i
     print index_list
     print oppo_index_list
     print cost_1, cost_2
