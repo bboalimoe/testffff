@@ -1,0 +1,7 @@
+[program:ocr]
+autorestart=True
+redirect_stderr=True
+command=/opt/leaniot/leaniot_backend/leaniot_backend/bin/gunicorn -b 0.0.0.0:8080 -w 2 process_image_server:app
+autostart=True
+directory=/home/ubuntu/ocr/VLRecognitionSuiteServerSO/Debug
+stdout_logfile=/opt/ocr/ocr.log
