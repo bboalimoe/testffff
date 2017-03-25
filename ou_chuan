@@ -1,9 +1,10 @@
 __author__ = 'zhanghengyang'
 
-
+import time
 
 test_s = "abbccddsmm"
 
+from memory_profiler import profile
 def find_target(child_s):
 
     times = 0
@@ -14,16 +15,20 @@ def find_target(child_s):
 #        child_s.replace(le, '')
     return flag
 
+@profile
 def func(s):
     count = 0
     word_pool = []
     for index, le in enumerate(s):
 #        word_pool.append(le)
         for i in range(index, len(s)):
-#           print s[index:i+1]
+            #print s[index:i+1]
             if find_target(s[index:i+1]) == True:
                 count += 1
 
     return count
+pre = time.time()
+re = func(test_s)
+after = time.time()
+print re, after - pre
 
-print func(test_s)
