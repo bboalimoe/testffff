@@ -13,7 +13,7 @@ def func(q):
     cost_1 = 0 
     cost_2 = 0
 
-    print 1
+    #print 1
     while(flag != -1):
         temp = q.find('G', index_skip+1 )
         flag = temp
@@ -31,9 +31,9 @@ def func(q):
         cost_1 += j-i
     for i,j in enumerate(oppo_index_list):
         cost_2 += j-i
-    print index_list
-    print oppo_index_list
-    print cost_1, cost_2
+    #print index_list
+    #print oppo_index_list
+    #print cost_1, cost_2
     return min([cost_1,cost_2])
 
 print func(test_q)
